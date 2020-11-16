@@ -11,7 +11,6 @@ func init() {
 var (
 	codeBuildCmd = &cobra.Command{
 		Use:     "codebuild",
-		Aliases: []string{"cb"},
 		RunE: func(cmd *cobra.Command, args []string) error {
 			return ErrSubcommandRequired
 		},

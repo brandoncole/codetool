@@ -1,7 +1,6 @@
 package codebuild
 
 import (
-	"fmt"
 	"sort"
 	"time"
 
@@ -70,7 +69,6 @@ func GetBuildStatistics(region string) (*BuildStatistics, error) {
 			result.BuildDurationInSeconds += int64(build.EndTime.Sub(*build.StartTime) / time.Second)
 			for _, phase := range build.Phases {
 				if nil == phase {
-					fmt.Println("Phase is nil")
 					continue
 				}
 				if duration, found := result.PhaseDurationsInSeconds[*phase.PhaseType]; found {
